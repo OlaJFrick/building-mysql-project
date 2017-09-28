@@ -1,6 +1,7 @@
 const query = require('./js/query-maker.js');
 const create = require('./js/create-stuff.js');
 const update = require('./js/update-stuff.js');
+const remove = require('./js/remove-stuff.js');
 const display = require('./js/display-stuff.js');
 
 async function displayFuncs() {
@@ -20,14 +21,21 @@ async function createFuncs() {
 
 async function updateFuncs() {
     // singleUpdate expects args (collection, findProp, findValue, changeProp, changeValue);
-    // update.singleUpdate('owners', 'firstname', 'Harald', 'firstname', 'Mysk');
-
+    update.singleUpdate('owners', 'firstname', 'Harald', 'firstname', 'Mysk');
     // or do more complex update in manualUpdate() ./js/update-stuff.js
     update.manualUpdate();
 }
 
+async function removeFuncs() {
+    // removeItem expects args (collection, findProp, findValue);
+    remove.removeItem('owners', 'id', 8);
+    // or do more complex update in manualDelete() ./js/remove-stuff.js
+    remove.manualRemove();
+}
+
 // displayFuncs();
 // createFuncs();
-updateFuncs();
+// updateFuncs();
+// removeFuncs();
 display.owners_addresses();
 query.dbEnd();
