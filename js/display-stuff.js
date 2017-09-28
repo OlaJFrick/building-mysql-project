@@ -14,7 +14,7 @@ async function singleQ(collection, prop, val, niceformat) {
     }
 
     // User specifies if they wish formated or unformated display in console
-    niceformat ? formated() : console.log(singleSearch);;
+    niceformat ? formated() : console.log(singleSearch);
 
     async function formated() {
         let niceFormat = [];
