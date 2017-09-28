@@ -53,7 +53,7 @@ async function allOwners() {
     console.log(niceFormat);
 }
 
-async function addresses() {
+async function allAddresses() {
 
     let addresses = await query.query('SELECT * FROM addresses');
     let niceFormat = [];
@@ -89,6 +89,6 @@ module.exports = {
     singleQ: singleQ,
     owner: owner,
     allOwners: allOwners,
-    addresses: addresses,
+    allAddresses: allAddresses,
     owners_addresses: owners_addresses
 }
