@@ -67,6 +67,20 @@ async function allAddresses() {
     console.log(niceFormat);
 }
 
+async function allPets() {
+
+    let pets = await query.query('SELECT * FROM pets');
+    // let niceFormat = [];
+
+    // for (let pet of pets) {
+    //     if (niceFormat.length !== pets.length) {
+    //         niceFormat.push(`id: ${pet.id} street: ${pet.street} zipcode: ${pet.zipcode} city: ${pet.city}`);
+    //     }
+    // }
+
+    console.log(pets);
+}
+
 async function owners_addresses() {
     let owners_addresses = await query.query(
         `SELECT * FROM owners
@@ -90,5 +104,6 @@ module.exports = {
     owner: owner,
     allOwners: allOwners,
     allAddresses: allAddresses,
+    allPets: allPets,
     owners_addresses: owners_addresses
 }

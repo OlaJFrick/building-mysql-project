@@ -5,36 +5,39 @@ const remove = require('./js/remove-stuff.js');
 const display = require('./js/display-stuff.js');
 
 async function displayFuncs() {
-    // singleQ expects args (collection, prop, query, niceformat(bool));
-    display.singleQ('owners', 'firstname', 'Carina', true);
-    display.singleQ('addresses', 'street', 'Almbacksgatan 16', true);
-    display.owner('Carina');
-    display.allOwners();
-    display.allAddresses();
-    display.owners_addresses();
+    // * singleQ expects args (collection, prop, query, niceformat(bool));
+    // display.singleQ('owners', 'firstname', 'Carina', true);
+    // display.singleQ('addresses', 'street', 'Almbacksgatan 16', true);
+    // display.owner('Carina');
+    // display.allOwners();
+    // display.allAddresses();
+    display.allPets();
+    // display.owners_addresses();
 }
 
 async function createFuncs() {
-    // create.owner('Micke', 'Bong', 5);
-    create.address('Benbrytargränd 2', 23135, 'Ystad');
+    // create.owner('Joshua', 'Floyd', 5);
+    // create.address('Vasagränd 21', 23321, 'Malmö');
+
+    create.pet('George', '2001-07-23', 'katt', 'bondkatt', 6)
 }
 
 async function updateFuncs() {
-    // singleUpdate expects args (collection, findProp, findValue, changeProp, changeValue);
+    // * singleUpdate expects args (collection, findProp, findValue, changeProp, changeValue);
     update.singleUpdate('owners', 'firstname', 'Harald', 'firstname', 'Mysk');
-    // or do more complex update in manualUpdate() ./js/update-stuff.js
+    // * or do more complex update in manualUpdate() ./js/update-stuff.js
     update.manualUpdate();
 }
 
 async function removeFuncs() {
-    // removeItem expects args (collection, findProp, findValue);
+    // * removeItem expects args (collection, findProp, findValue);
     remove.removeItem('owners', 'id', 8);
-    // or do more complex update in manualDelete() ./js/remove-stuff.js
+    // * or do more complex update in manualDelete() ./js/remove-stuff.js
     remove.manualRemove();
 }
 
 // displayFuncs();
-// createFuncs();
+createFuncs();
 // updateFuncs();
 // removeFuncs();
 display.owners_addresses();

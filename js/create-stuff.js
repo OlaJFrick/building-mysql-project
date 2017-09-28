@@ -28,7 +28,22 @@ async function address(street, zip, city) {
     `);
 }
 
+async function pet(name, date, species, race, ownerId) {
+
+    let p = await query.query(`
+        INSERT pets
+        VALUES(NULL, '${name}', '${date}', '${species}', '${race}', '${ownerId}')
+    `);
+
+    console.log(`SUCCESS.
+        A new Pet:
+        ${name}
+        was created with the ID of ${p.insertId}
+    `);
+}
+
 module.exports = {
     owner: owner,
-    address: address
+    address: address,
+    pet: pet
 }
