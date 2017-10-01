@@ -42,8 +42,22 @@ async function pet(name, date, species, race, ownerId) {
     `);
 }
 
+async function feedingbowl(color, material, volume, petid) {
+
+    let bowl = await query.query(`
+        INSERT feedingbowls
+        VALUES(NULL, '${color}', '${material}', '${volume}', '${petid}')
+    `);
+
+    console.log(`SUCCESS.
+        A new ${color} Bowl:
+        was created with the ID of ${bowl.insertId}
+    `);
+}
+
 module.exports = {
     owner: owner,
     address: address,
-    pet: pet
+    pet: pet,
+    feedingbowl: feedingbowl
 }
