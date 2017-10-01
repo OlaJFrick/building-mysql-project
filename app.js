@@ -3,6 +3,7 @@ const create = require('./js/create-stuff.js');
 const update = require('./js/update-stuff.js');
 const remove = require('./js/remove-stuff.js');
 const display = require('./js/display-stuff.js');
+const fillDb = require('./js/fill-db.js');
 
 async function displayFuncs() {
     // * singleQ expects args (collection, prop, query, niceformat(bool));
@@ -18,8 +19,8 @@ async function displayFuncs() {
 async function createFuncs() {
     // create.owner('Joshua', 'Floyd', 5);
     // create.address('Vasagränd 21', 23321, 'Malmö');
+    // create.pet('George', '2001-07-23', 'katt', 'bondkatt', 6)
 
-    create.pet('George', '2001-07-23', 'katt', 'bondkatt', 6)
 }
 
 async function updateFuncs() {
@@ -31,14 +32,16 @@ async function updateFuncs() {
 
 async function removeFuncs() {
     // * removeItem expects args (collection, findProp, findValue);
-    remove.removeItem('owners', 'id', 8);
+    // remove.removeItem('owners', 'id', 8);
+    // remove.removeItem('pets', 'id', 2);
     // * or do more complex update in manualDelete() ./js/remove-stuff.js
     remove.manualRemove();
 }
 
 // displayFuncs();
-createFuncs();
+// createFuncs();
 // updateFuncs();
 // removeFuncs();
-display.owners_addresses();
+// fillDb.fillDb();
+// display.owners_addresses();
 query.dbEnd();
