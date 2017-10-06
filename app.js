@@ -22,7 +22,7 @@ app.use(RestSql.start({
     baseUrl: '/rest',
     rejectOnErrors: false,
     specialIDs: {
-      petOwners: 'pnr'
+      petowners: 'pnr'
     },
 }));
 
